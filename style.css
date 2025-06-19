@@ -31,15 +31,20 @@ body, html {
   color: #2e2c40;
 }
 
-.nav-links a {
-  margin-left: 24px;
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-item a {
   text-decoration: none;
   color: #666;
   font-size: 14px;
   transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-item a:hover {
   color: #6a4dd4;
 }
 
