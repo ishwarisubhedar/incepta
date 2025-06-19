@@ -4,18 +4,15 @@ function submitSkills() {
   const status = document.getElementById('status-msg');
 
   if (!teach || !learn) {
-    status.innerText = "Oops! Please fill in both fields 🥺";
-    status.style.color = "#e45a84";
+    status.innerText = "Please fill in both fields.";
+    status.style.color = "#c94343";
     return;
   }
 
-  // Fake saving (until Firebase is set)
   console.log("Submitted:", { teach, learn });
+  status.innerText = "Skills submitted successfully.";
+  status.style.color = "#4caf50";
 
-  status.innerText = "Yay! Your skills have been noted 💖";
-  status.style.color = "#5eaa60";
-
-  // Clear inputs
   document.getElementById('teach').value = "";
   document.getElementById('learn').value = "";
 }
