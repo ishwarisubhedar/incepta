@@ -1,106 +1,81 @@
-/* Reset & Fonts */
+/* Base Reset */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: #fdf6ff;
+  font-family: 'Inter', sans-serif;
+  background: #f5f4f8;
   height: 100vh;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Glowy Gradient Background */
-.glow-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top right, #ffd0ec, #e1d6ff, #fff);
-  z-index: -1;
-  animation: backgroundMove 10s infinite alternate ease-in-out;
-}
-
-@keyframes backgroundMove {
-  0% { background-position: top right; }
-  100% { background-position: bottom left; }
-}
-
-/* Container */
+/* Form Container */
 .form-wrapper {
-  width: 350px;
-  margin: 60px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 25px;
-  box-shadow: 0 0 20px rgba(174, 136, 255, 0.1);
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 360px;
   text-align: center;
-  animation: fadeUp 1s ease-out;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Headings */
 .title {
-  color: #a86af5;
   font-size: 28px;
+  font-weight: 600;
+  color: #2e2c40;
   margin-bottom: 8px;
 }
 
 .subtitle {
   font-size: 14px;
-  color: #555;
-  margin-bottom: 25px;
+  color: #787685;
+  margin-bottom: 24px;
 }
 
-/* Input Styling */
+/* Input Fields */
 input {
-  width: 90%;
-  padding: 12px;
-  margin: 10px auto;
-  border: 1px solid #d8c9ff;
-  border-radius: 12px;
-  background: #faf7ff;
-  font-size: 15px;
-  transition: 0.2s;
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fafafa;
+  transition: 0.2s ease;
 }
 
 input:focus {
-  border-color: #a86af5;
   outline: none;
-  background: #fffaff;
+  border-color: #a184f5;
+  background: #fff;
 }
 
-/* Button Styling */
+/* Button */
 button {
-  background: linear-gradient(135deg, #b38bff, #c780ff);
+  width: 100%;
+  padding: 12px 16px;
+  background: #6a4dd4;
   color: white;
+  font-size: 15px;
   border: none;
-  border-radius: 30px;
-  padding: 12px 24px;
-  margin-top: 10px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+  transition: 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(168, 106, 245, 0.3);
+  background: #5a3ec3;
 }
 
+/* Status Message */
 .status-msg {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #555;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #4c4c4c;
 }
 
-/* Fade In Effect */
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
