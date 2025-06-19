@@ -1,41 +1,106 @@
-/* style.css */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9f0ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Reset & Fonts */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: #fdf6ff;
   height: 100vh;
+  overflow: hidden;
 }
 
-.form-container {
-  background: white;
+/* Glowy Gradient Background */
+.glow-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, #ffd0ec, #e1d6ff, #fff);
+  z-index: -1;
+  animation: backgroundMove 10s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: top right; }
+  100% { background-position: bottom left; }
+}
+
+/* Container */
+.form-wrapper {
+  width: 350px;
+  margin: 60px auto;
   padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(174, 136, 255, 0.1);
   text-align: center;
-  width: 300px;
+  animation: fadeUp 1s ease-out;
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  color: #a86af5;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Input Styling */
 input {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
   width: 90%;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 10px auto;
+  border: 1px solid #d8c9ff;
+  border-radius: 12px;
+  background: #faf7ff;
+  font-size: 15px;
+  transition: 0.2s;
 }
 
+input:focus {
+  border-color: #a86af5;
+  outline: none;
+  background: #fffaff;
+}
+
+/* Button Styling */
 button {
-  background: #a86af5;
+  background: linear-gradient(135deg, #b38bff, #c780ff);
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
+  padding: 12px 24px;
+  margin-top: 10px;
   cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  background: #9346f1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(168, 106, 245, 0.3);
+}
+
+.status-msg {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Fade In Effect */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
