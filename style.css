@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -31,16 +31,53 @@ body, html {
   color: #2e2c40;
 }
 
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #666;
-  font-size: 14px;
-  transition: color 0.2s;
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
-.nav-links a:hover {
+.nav-item {
+  position: relative;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
   color: #6a4dd4;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  padding: 10px 0;
+  display: none;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #f3f1ff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* Page Layout */
@@ -61,74 +98,8 @@ body, html {
   max-width: 360px;
   text-align: center;
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInSlide 0.7s ease-out forwards;
-}
+  transf
 
-/* Headings */
-.title {
-  font-size: 28px;
-  font-weight: 600;
-  color: #2e2c40;
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #787685;
-  margin-bottom: 24px;
-}
-
-/* Inputs */
-input {
-  width: 100%;
-  padding: 12px 16px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 14px;
-  background: #fafafa;
-  transition: 0.2s ease;
-}
-
-input:focus {
-  outline: none;
-  border-color: #a184f5;
-  background: #fff;
-}
-
-/* Button */
-button {
-  width: 100%;
-  padding: 12px 16px;
-  background: #6a4dd4;
-  color: white;
-  font-size: 15px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: 0.2s ease;
-}
-
-button:hover {
-  background: #5a3ec3;
-}
-
-/* Message */
-.status-msg {
-  margin-top: 15px;
-  font-size: 13px;
-  color: #4c4c4c;
-}
-
-/* Animations */
-@keyframes fadeInSlide {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 
