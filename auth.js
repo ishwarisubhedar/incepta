@@ -44,3 +44,16 @@ loginBtn.addEventListener("click", () => {
       alert(error.message);
     });
 });
+import { signOut } from "firebase/auth";
+
+const logoutBtn = document.getElementById("logout-btn");
+
+logoutBtn.addEventListener("click", () => {
+  signOut(auth)
+    .then(() => {
+      alert("Logged out successfully!");
+      window.location.href = "index.html"; // Or wherever you want
+    })
+    .catch((error) => console.error("Logout error:", error));
+});
+
