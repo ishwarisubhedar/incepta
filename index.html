@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkillSwap ✨</title>
+  <title>SkillSwap</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="glow-bg"></div>
+  <div class="form-wrapper">
+    <h1 class="title">SkillSwap</h1>
+    <p class="subtitle">Share what you know. Learn what you love.</p>
 
-  <div class="form-wrapper fade-in">
-    <h1 class="title">🌸 SkillSwap</h1>
-    <p class="subtitle">A cute way to share and learn new skills!</p>
+    <input type="text" id="teach" placeholder="What can you teach?" />
+    <input type="text" id="learn" placeholder="What do you want to learn?" />
 
-    <input type="text" id="teach" placeholder="💡 What can you teach?" />
-    <input type="text" id="learn" placeholder="📚 What do you want to learn?" />
-
-    <button onclick="submitSkills()">✨ Submit ✨</button>
+    <button onclick="submitSkills()">Submit</button>
     <p id="status-msg" class="status-msg"></p>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
