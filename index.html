@@ -8,18 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="form-wrapper">
-    <h1 class="title">SkillSwap</h1>
-    <p class="subtitle">Share what you know. Learn what you love.</p>
+  <!-- Floating Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">SkillSwap</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
 
-    <input type="text" id="teach" placeholder="What can you teach?" />
-    <input type="text" id="learn" placeholder="What do you want to learn?" />
+  <!-- Form Section -->
+  <main class="main-container fade-slide">
+    <div class="form-wrapper">
+      <h1 class="title">SkillSwap</h1>
+      <p class="subtitle">Share what you know. Learn what you love.</p>
 
-    <button onclick="submitSkills()">Submit</button>
-    <p id="status-msg" class="status-msg"></p>
-  </div>
+      <input type="text" id="teach" placeholder="What can you teach?" />
+      <input type="text" id="learn" placeholder="What do you want to learn?" />
+
+      <button onclick="submitSkills()">Submit</button>
+      <p id="status-msg" class="status-msg"></p>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
