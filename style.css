@@ -1,10 +1,51 @@
-/* Base Reset */
-body, html {
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   font-family: 'Inter', sans-serif;
   background: #f5f4f8;
   height: 100vh;
+}
+
+/* Floating Navbar */
+.navbar {
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-weight: 600;
+  font-size: 20px;
+  color: #2e2c40;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #6a4dd4;
+}
+
+/* Page Layout */
+.main-container {
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +60,9 @@ body, html {
   width: 100%;
   max-width: 360px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInSlide 0.7s ease-out forwards;
 }
 
 /* Headings */
@@ -35,7 +79,7 @@ body, html {
   margin-bottom: 24px;
 }
 
-/* Input Fields */
+/* Inputs */
 input {
   width: 100%;
   padding: 12px 16px;
@@ -71,12 +115,21 @@ button:hover {
   background: #5a3ec3;
 }
 
-/* Status Message */
+/* Message */
 .status-msg {
   margin-top: 15px;
   font-size: 13px;
   color: #4c4c4c;
 }
+
+/* Animations */
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
