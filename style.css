@@ -1,21 +1,83 @@
-function submitSkills() {
-  const teach = document.getElementById('teach').value.trim();
-  const learn = document.getElementById('learn').value.trim();
-  const status = document.getElementById('status-msg');
-
-  if (!teach || !learn) {
-    status.innerText = "Please fill in both fields.";
-    status.style.color = "#c94343";
-    return;
-  }
-
-  console.log("Submitted:", { teach, learn });
-  status.innerText = "Skills submitted successfully.";
-  status.style.color = "#4caf50";
-
-  document.getElementById('teach').value = "";
-  document.getElementById('learn').value = "";
+/* Base Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f5f4f8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* Form Container */
+.form-wrapper {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+/* Headings */
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2e2c40;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #787685;
+  margin-bottom: 24px;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fafafa;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #a184f5;
+  background: #fff;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px 16px;
+  background: #6a4dd4;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #5a3ec3;
+}
+
+/* Status Message */
+.status-msg {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #4c4c4c;
+}
+
 
 
 
