@@ -1,22 +1,19 @@
-<!-- index.html -->
+<!-- auth.html -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SkillSwap</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>SkillSwap - Auth</title>
 </head>
 <body>
-  <div class="form-container">
-    <h1>🧠 SkillSwap</h1>
-    <p>Enter your skills below:</p>
-    
-    <input type="text" id="teach" placeholder="What can you teach?" />
-    <input type="text" id="learn" placeholder="What do you want to learn?" />
-    <button onclick="submitSkills()">Submit</button>
+  <h2>Sign Up / Log In</h2>
 
-    <p id="status-msg"></p>
-  </div>
+  <input type="email" id="email" placeholder="Email" />
+  <input type="password" id="password" placeholder="Password" />
 
-  <script src="script.js"></script>
+  <button id="signup-btn">Sign Up</button>
+  <button id="login-btn">Log In</button>
+
+  <script type="module" src="auth.js"></script>
 </body>
 </html>
+
