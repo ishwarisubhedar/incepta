@@ -1,19 +1,26 @@
-<!-- auth.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SkillSwap - Auth</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillSwap ✨</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2>Sign Up / Log In</h2>
+  <div class="glow-bg"></div>
 
-  <input type="email" id="email" placeholder="Email" />
-  <input type="password" id="password" placeholder="Password" />
+  <div class="form-wrapper fade-in">
+    <h1 class="title">🌸 SkillSwap</h1>
+    <p class="subtitle">A cute way to share and learn new skills!</p>
 
-  <button id="signup-btn">Sign Up</button>
-  <button id="login-btn">Log In</button>
+    <input type="text" id="teach" placeholder="💡 What can you teach?" />
+    <input type="text" id="learn" placeholder="📚 What do you want to learn?" />
 
-  <script type="module" src="auth.js"></script>
+    <button onclick="submitSkills()">✨ Submit ✨</button>
+    <p id="status-msg" class="status-msg"></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
