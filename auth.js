@@ -1,9 +1,11 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "./firebase.js";
-import { db } from "./firebase.js";
+// auth.js
+import { db, auth } from "./firebase.js";
 import { collection, addDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-// Auth Buttons
+console.log("✅ auth.js loaded");
+
+// Sign-up/Login Elements
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
@@ -19,13 +21,10 @@ if (signupBtn) {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCred => {
-        alert("Sign-up successful!");
+        alert("✅ Sign-up successful!");
         console.log("Signed up:", userCred.user);
       })
-      .catch(error => {
-        alert(error.message);
-        console.error("Sign-up error:", error.message);
-      });
+      .catch(err => alert(err.message));
   });
 }
 
@@ -37,13 +36,10 @@ if (loginBtn) {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(userCred => {
-        alert("Login successful!");
+        alert("✅ Login successful!");
         console.log("Logged in:", userCred.user);
       })
-      .catch(error => {
-        alert(error.message);
-        console.error("Login error:", error.message);
-      });
+      .catch(err => alert(err.message));
   });
 }
 
@@ -52,9 +48,10 @@ if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     signOut(auth)
       .then(() => {
-        alert("Logged out successfully!");
+        alert("🚪 Logged out");
+        window.location.href = "index.html";
       })
-      .catch((error) => console.error("Logout error:", error));
+      .catch(err => console.error(err));
   });
 }
 
@@ -66,42 +63,14 @@ if (testBtn) {
     try {
       await addDoc(collection(db, "testCollection"), {
         name: "Disha",
-        purpose: "Testing Firebase Integration",
+        purpose: "Testing Firebase Firestore",
         timestamp: new Date()
       });
-      alert("✅ Data sent to Firestore!");
+      alert("✅ Data written to Firestore!");
     } catch (error) {
-      console.error("❌ Firestore error:", error);
-      alert("Firestore write failed.");
+      console.error("❌ Firestore write failed:", error);
+      alert("Failed to write to Firestore");
     }
   });
 }
-// app.js
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-// Your actual Firebase config goes here:
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-document.getElementById("testBtn").addEventListener("click", async () => {
-  try {
-    await addDoc(collection(db, "testCollection"), {
-      message: "Test write from SkillSwap",
-      timestamp: new Date()
-    });
-    alert("✅ Successfully written to Firestore!");
-  } catch (e) {
-    console.error("❌ Error writing to Firestore:", e);
-    alert("Failed to write. See console.");
-  }
-});
