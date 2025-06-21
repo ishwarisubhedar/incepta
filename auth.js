@@ -56,4 +56,23 @@ logoutBtn.addEventListener("click", () => {
     })
     .catch((error) => console.error("Logout error:", error));
 });
+import { db } from "./firebaseConfig.js";  // adjust path if needed
+import { collection, addDoc } from "firebase/firestore";
+
+const testFirebase = async () => {
+  try {
+    await addDoc(collection(db, "testCollection"), {
+      message: "Firebase is connected!",
+      timestamp: new Date()
+    });
+    alert("✅ Firebase is working!");
+  } catch (error) {
+    console.error("❌ Firebase error:", error);
+    alert("Firebase NOT working. Check console.");
+  }
+};
+
+// Optional: Trigger with a button
+document.getElementById("testBtn").addEventListener("click", testFirebase);
+
 
