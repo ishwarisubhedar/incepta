@@ -24,6 +24,3 @@ document.getElementById("skillForm").addEventListener("submit", function (e) {
     document.getElementById("learn").value = "";
   }, 1500);
 });
-
-
-
