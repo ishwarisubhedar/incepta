@@ -74,5 +74,24 @@ const testFirebase = async () => {
 
 // Optional: Trigger with a button
 document.getElementById("testBtn").addEventListener("click", testFirebase);
+import { db } from './firebaseConfig.js';
+import { collection, addDoc } from 'firebase/firestore';
+
+const testFirebase = async () => {
+  try {
+    await addDoc(collection(db, "testCollection"), {
+      name: "Disha",
+      purpose: "Testing Firebase Integration",
+      time: new Date()
+    });
+    alert("✅ Data sent to Firestore!");
+  } catch (error) {
+    console.error("❌ Failed to write to Firestore:", error);
+    alert("Failed to write data. Check console.");
+  }
+};
+
+document.getElementById("testBtn").addEventListener("click", testFirebase);
+
 
 
