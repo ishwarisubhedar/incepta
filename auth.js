@@ -76,3 +76,32 @@ if (testBtn) {
     }
   });
 }
+// app.js
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+// Your actual Firebase config goes here:
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+document.getElementById("testBtn").addEventListener("click", async () => {
+  try {
+    await addDoc(collection(db, "testCollection"), {
+      message: "Test write from SkillSwap",
+      timestamp: new Date()
+    });
+    alert("✅ Successfully written to Firestore!");
+  } catch (e) {
+    console.error("❌ Error writing to Firestore:", e);
+    alert("Failed to write. See console.");
+  }
+});
